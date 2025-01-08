@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>«”ò—Ê· ”«œÂ</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .image-container img {
+            width: 80%;
+            margin: 2px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container" id="imageContainer">
+        <!--  ’«ÊÌ— «Ê·ÌÂ -->
+        <img src="images/image1.jpg" alt="Image 1">
+        <img src="images/image2.jpg" alt="Image 2">
+        <img src="images/image3.jpg" alt="Image 3">
+        <img src="images/image4.jpg" alt="Image 4">
+        <img src="images/image5.jpg" alt="Image 5"> 
+
+    </div>
+
+    <script>
+        const imageContainer = document.getElementById('imageContainer');
+
+        //  «»⁄ ”«œÂ »—«Ì «÷«›Â ò—œ‰  ’«ÊÌ— ÃœÌœ
+        function loadMoreImages() {
+            for (let i = 0; i < 3; i++) { // ”Â  ’ÊÌ— ÃœÌœ «÷«›Â ò‰
+                const img = document.createElement('img');
+                img.src = https://via.placeholder.com/600x400?text=New+Image+${Math.random().toFixed(2)};
+                img.alt = "New Image";
+                imageContainer.appendChild(img);
+            }
+        }
+
+        // «÷«›Â ò—œ‰  ’«ÊÌ— Â‰ê«„ ‰“œÌò ‘œ‰ »Â Å«ÌÌ‰ ’›ÕÂ
+        window.addEventListener('scroll', () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                loadMoreImages();
+            }
+        });
+    </script>
+</body>
+</html>
